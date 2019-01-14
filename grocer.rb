@@ -55,10 +55,10 @@ def apply_clearance(cart)
   
 end
 
-def checkout(cart, coupons)
+def checkout(cart: [], coupons: [])
   # code here
     consolidatedCart = consolidate_cart(cart)
-  coupons_applied = apply_coupons(consolCartcoupons)
+  coupons_applied = apply_coupons(coupons)
   clearance_applied = apply_clearance(appliedCoupons)
 
   total = 0
