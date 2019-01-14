@@ -15,7 +15,7 @@ def consolidate_cart(cart)
   return temp
 end
 
-def process_coupon(cart, coupon)
+def process_coupon(cart:[], coupons:[])
 
     numofcoupons = coupon[:num]
     itemForCoupon = coupon[:item]
