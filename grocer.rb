@@ -15,18 +15,18 @@ def consolidate_cart(cart)
   return temp
 end
 
-def process_coupon(cart, coupons)
+def process_coupon(cart, couponitem)
 
-    numofcoupons = coupon[:num]
-    itemForCoupon = coupon[:item]
-    numberofcoupons = coupon[:num].to_i
+    numofcoupons = couponitem[:num]
+    itemForCoupon = couponitem[:item]
+    numberofcoupons = couponitem[:num].to_i
   
     if cart.has_key?(itemForCoupon) && cart[itemForCoupon][:count] >= numberofcoupons
       cart[itemForCoupon][:count] = cart[itemForCoupon][:count] - numofcoupons
       cart["#{itemForCoupon} W/COUPON"] ||= {}
       
       cart["#{itemForCoupon} W/COUPON"][:clearance] = cart[itemForCoupon][:clearance]
-      cart["#{itemForCoupon} W/COUPON"][:price] = coupon[:cost]
+      cart["#{itemForCoupon} W/COUPON"][:price] = couponitem[:cost]
       cart["#{itemForCoupon} W/COUPON"][:count] ||= 0
       cart["#{itemForCoupon} W/COUPON"][:count] += 1
     end
