@@ -24,6 +24,7 @@ def process_coupon(cart, coupon)
     if cart.has_key?(itemForCoupon) && cart[itemForCoupon][:count] >= numberofcoupons
       cart[itemForCoupon][:count] = cart[itemForCoupon][:count] - numofcoupons
       cart["#{itemForCoupon} W/COUPON"] ||= {}
+      
       cart["#{itemForCoupon} W/COUPON"][:clearance] = cart[itemForCoupon][:clearance]
       cart["#{itemForCoupon} W/COUPON"][:price] = coupon[:cost]
       cart["#{itemForCoupon} W/COUPON"][:count] ||= 0
@@ -35,6 +36,7 @@ def process_coupon(cart, coupon)
 def apply_coupons(cart, coupons)
   # code here
   coupons.each do |couponitem|
+    
     process_coupon(cart, couponitem)
   end
     #cart
@@ -45,6 +47,7 @@ def apply_clearance(cart)
   # code here
    cart.each do |item, att|
     if att[:clearance] == true
+      
       clearanceprice = att[:price] * 0.8
       att[:price] = clearanceprice.round(2)
     end
