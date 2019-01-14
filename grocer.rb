@@ -33,7 +33,7 @@ def process_coupon(cart, coupon)
   end
   
 
-def apply_coupons(cart, coupons)
+def apply_coupons(cart:[], coupons:[])
   # code here
   coupons.each do |couponitem|
     
