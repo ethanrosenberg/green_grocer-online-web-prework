@@ -43,7 +43,7 @@ def apply_coupons(cart, coupons)
     return cart
 end
 
-def apply_clearance(cart)
+def apply_clearance(cart:[])
   # code here
    cart.each do |item, att|
     if att[:clearance] == true
