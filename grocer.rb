@@ -1,4 +1,4 @@
-def consolidate_cart(cart:[])
+def consolidate_cart(cart)
   # code here
   temp = {}
   
@@ -15,7 +15,7 @@ def consolidate_cart(cart:[])
   return temp
 end
 
-def process_coupon(cart:[], coupons:[])
+def process_coupon(cart, coupons)
 
     numofcoupons = coupon[:num]
     itemForCoupon = coupon[:item]
@@ -33,7 +33,7 @@ def process_coupon(cart:[], coupons:[])
   end
   
 
-def apply_coupons(cart:[], coupons:[])
+def apply_coupons(cart, coupons)
   # code here
   coupons.each do |couponitem|
     
@@ -43,7 +43,7 @@ def apply_coupons(cart:[], coupons:[])
     return cart
 end
 
-def apply_clearance(cart:[])
+def apply_clearance(cart)
   # code here
    cart.each do |item, att|
     if att[:clearance] == true
@@ -55,7 +55,7 @@ def apply_clearance(cart:[])
   
 end
 
-def checkout(cart: [], coupons: [])
+def checkout(cart, coupons)
   # code here
     consolidatedCart = consolidate_cart(cart: cart)
   coupons_applied = apply_coupons(cart: consolidatedCart, coupons: coupons))
